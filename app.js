@@ -1,15 +1,30 @@
 // Define variables to select elements from the DOM
+
 var cartValue = document.getElementById("cart-value");
 var cartButton = document.getElementById("cart");
 var addButtons = document.getElementsByClassName("button");
 
 // Define an array of items with their properties
 var items = [
-  { name: "This was our pact", quantity: 0, dollars: 7, cents: 49 },
-  { name: "The famous five", quantity: 0, dollars: 4, cents: 59 },
-  { name: "Matilda", quantity: 0, dollars: 6, cents: 80 },
+  { name: "This was our pact", quantity: 0, dollars: 7},
+  { name: "The famous five", quantity: 0, dollars: 4 },
+  { name: "Matilda", quantity: 0, dollars: 6},
+  { name: "Harry Potter", quantity: 0, dollars: 10},
+  { name: "For Young Readers", quantity: 0, dollars: 7},
+  { name: "Wimpy Kid - DIY", quantity: 0, dollars: 4 },
+  { name: "Dart Board", quantity: 0, dollars: 17},
+  { name: "Connect 4", quantity: 0, dollars:19 },
+  { name: "Jenga", quantity: 0, dollars: 20},
+  { name: "Monopoly", quantity: 0, dollars: 19},
+  { name: "Bookmarks", quantity: 0, dollars: 12},
+  { name: "Birthday card", quantity: 0, dollars: 19 },
+  { name: "Stuffed toys", quantity: 0, dollars: 15 },
+  { name: "Dream catcher drawing", quantity: 0, dollars: 18},
+  
+
   // Add more items as needed
 ];
+
 
 // Function to update the cart display
 function updateCart() {
@@ -22,19 +37,19 @@ function updateCart() {
 
 // Function to update the total price
 function updatePrice() {
-  let totalPriceInCents = 0;
+  let totalPrice= 0;
   for (let index = 0; index < items.length; index++) {
-    totalPriceInCents +=
-      items[index].quantity * (items[index].dollars * 100 + items[index].cents);
+    totalPrice +=
+      items[index].quantity * (items[index].dollars );
   }
-  // Convert total price to dollars and cents
-  var finalDollars = Math.floor(totalPriceInCents / 100);
-  var finalCents = totalPriceInCents % 100;
+
+  
   // Log the total amount to the console
   console.log(
-    "The total amount is " + finalDollars + "$ and " + finalCents + " cents"
+    "The total amount is " + totalPrice + "$ and " 
   );
 }
+
 
 // Add event listeners to the "Add to Cart" buttons
 for (let i = 0; i < addButtons.length; i++) {
@@ -60,3 +75,33 @@ cartButton.addEventListener("click", function() {
   // Call the function to update the total price
   updatePrice();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
